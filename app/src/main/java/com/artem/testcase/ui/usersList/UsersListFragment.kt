@@ -1,7 +1,6 @@
 package com.artem.testcase.ui.usersList
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +10,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.artem.testcase.adapter.UsersAdapter
 import com.artem.testcase.databinding.FragmentUsersListBinding
-import io.reactivex.disposables.CompositeDisposable
 
 class UsersListFragment : Fragment() {
 

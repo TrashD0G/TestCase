@@ -6,7 +6,6 @@ import androidx.lifecycle.*
 import com.artem.testcase.POJO.Data
 import com.artem.testcase.POJO.RegresPOJO
 import com.artem.testcase.di.DaggerAppComponent
-import com.artem.testcase.di.TestCaseApplication
 import com.artem.testcase.repository.Users
 import com.artem.testcase.repository.UsersDatabase
 import com.artem.testcase.repository.UsersRepository
@@ -62,7 +61,7 @@ class UsersListViewModel(application: Application) : AndroidViewModel(applicatio
                     deletAllUsers()
 
                 }catch (e:Exception){
-                    Log.i("MyTag","Error! " + e.toString())
+
                     _errorChecker.postValue(true)
 
                 }

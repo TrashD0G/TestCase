@@ -3,14 +3,9 @@ package com.artem.testcase.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.FragmentNavigator
-import androidx.navigation.fragment.FragmentNavigatorDestinationBuilder
 import androidx.recyclerview.widget.RecyclerView
 import com.artem.testcase.POJO.Data
-import com.artem.testcase.R
-import com.artem.testcase.databinding.FragmentAboutProgramBinding
 import com.artem.testcase.databinding.UsersItemBinding
 import com.artem.testcase.repository.Users
 import com.artem.testcase.ui.usersList.UsersListFragmentDirections

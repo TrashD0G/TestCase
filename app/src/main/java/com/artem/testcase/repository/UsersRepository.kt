@@ -1,6 +1,5 @@
 package com.artem.testcase.repository
 
-import android.app.Application
 import androidx.lifecycle.LiveData
 import com.artem.testcase.POJO.Data
 

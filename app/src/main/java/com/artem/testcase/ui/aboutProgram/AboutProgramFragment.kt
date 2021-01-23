@@ -24,9 +24,10 @@ class AboutProgramFragment : Fragment() {
 
 
         val textView: TextView = root.findViewById(R.id.text_about_program)
-        aboutProgramViewModel.text.observe(viewLifecycleOwner, Observer {
+        aboutProgramViewModel.text.observe(viewLifecycleOwner,  {
             textView.text = it
         })
+
         return root
     }
 }
