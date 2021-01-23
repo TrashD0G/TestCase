@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigationUsersList">
+
+    <fragment
+        android:id="@+id/navigationUsersList"
+        android:name="com.artem.testcase.ui.usersList.UsersListFragment"
+        android:label="@string/title_users_list"
+        tools:layout="@layout/fragment_users_list" >
+        <action
+            android:id="@+id/action_navigation_users_list_to_navigation_user"
+            app:destination="@id/navigationUser" />
+        <argument
+            android:name="nubmer"
+            app:argType="integer"
+            android:defaultValue="0" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigationUser"
+        android:name="com.artem.testcase.ui.user.UserFragment"
+        android:label="@string/title_user"
+        tools:layout="@layout/fragment_user">
+        <action
+            android:id="@+id/action_navigation_user_to_navigation_users_list"
+            app:destination="@id/navigationUsersList" />
+        <argument
+            android:name="User"
+            app:argType="com.artem.testcase.POJO.Data" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_about_program"
+        android:name="com.artem.testcase.ui.aboutProgram.AboutProgramFragment"
+        android:label="@string/title_about_program"
+        tools:layout="@layout/fragment_about_program" />
+</navigation>
