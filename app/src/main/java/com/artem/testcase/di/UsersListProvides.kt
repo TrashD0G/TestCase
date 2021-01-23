@@ -13,6 +13,7 @@ import javax.inject.Singleton
 @Module
 class UsersListProvides {
 
+
     @Provides
     fun providesGson(): Gson = GsonBuilder().create()
 
@@ -22,7 +23,7 @@ class UsersListProvides {
     fun providesRetrofit(gson: Gson): RegresApi {
         return Retrofit.Builder()
                 .baseUrl("https://reqres.in/api/")
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create(gson))
                 .build()
                 .create(RegresApi::class.java)
     }

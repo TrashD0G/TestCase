@@ -16,7 +16,6 @@ class ApiRequest {
        DaggerAppComponent.create().injectApiRequest(this)
    }
 
-
     suspend fun getReguest(): Response<RegresPOJO> {
         return api.getUsers()
     }

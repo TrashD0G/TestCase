@@ -65,8 +65,6 @@ class UsersListViewModel(application: Application) : AndroidViewModel(applicatio
                     Log.i("MyTag","Error! " + e.toString())
                     _errorChecker.postValue(true)
 
-                    //Подкачка с бд
-
                 }
 
         }

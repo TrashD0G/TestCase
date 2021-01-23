@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.artem.testcase.adapter.UsersAdapter
 import com.artem.testcase.databinding.FragmentUsersListBinding
+import io.reactivex.disposables.CompositeDisposable
 
 class UsersListFragment : Fragment() {
 
@@ -35,7 +36,6 @@ class UsersListFragment : Fragment() {
         usersListViewModel.getUsers()
         usersListViewModel.regresResponse.observe(viewLifecycleOwner, { response ->
             if (response.isSuccessful) {
-
                 setupRecycvlerview()
                 response.body()?.let { usersAdapter.setData(it.users) }
             } else {
@@ -43,8 +43,6 @@ class UsersListFragment : Fragment() {
                 Toast.makeText(requireContext(), "Ошибка !", Toast.LENGTH_LONG).show()
             }
         })
-
-
 
         usersListViewModel.errorChecker.observe(viewLifecycleOwner, { error ->
             if (error) {
@@ -54,13 +52,11 @@ class UsersListFragment : Fragment() {
                     usersAdapter.setData(it)
                 })
             }
-        }
-        )
+        })
 
 
         return fragmentUsersListBinding?.root
     }
-
 
 
     private fun setupRecycvlerview(){
